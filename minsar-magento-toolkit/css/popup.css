@@ -1,3 +1,12 @@
+/**
+ * Minsar — Magento Admin Toolkit
+ * Popup Stylesheet
+ *
+ * Dark-themed UI for the extension popup.
+ * Uses CSS custom properties for consistent theming.
+ * All colors follow the Minsar brand palette.
+ */
+
 /* Minsar — Magento Admin Toolkit */
 :root {
   --bg: #1a1a2e;
@@ -340,9 +349,12 @@ kbd {
   font-size: 12px;
   font-weight: 500;
   z-index: 100;
-  transition: opacity 0.3s;
   white-space: nowrap;
+  animation: toastIn 0.3s ease;
+  transition: opacity 0.5s ease;
 }
+.toast.hidden { opacity: 0; pointer-events: none; }
+@keyframes toastIn { from { opacity: 0; transform: translateX(-50%) translateY(10px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
 .toast.success { background: var(--success); color: #000; }
 .toast.error { background: var(--danger); color: #fff; }
 .toast.info { background: var(--bg-hover); color: var(--text); border: 1px solid var(--border); }

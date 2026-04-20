@@ -29,4 +29,4 @@ Minsar does not use any third-party analytics, tracking, or advertising services
 
 ## Contact
 
-For questions about this privacy policy, contact: saifali.rehman20@gmail.com
+For questions about this privacy policy, contact: saifali.openai@gmail.com

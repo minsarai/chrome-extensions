@@ -1,5 +1,21 @@
-// Minsar — Pre-indexed Magento 2 admin pages, config paths, and actions
-// This powers the Omni-Search (Ctrl+K)
+/**
+ * Minsar — Magento Admin Toolkit
+ * Config Index — Pre-indexed Magento 2 Admin Pages & Config Paths
+ *
+ * This file powers the Omni-Search (Ctrl+K) feature in the popup.
+ * It contains a pre-built index of all common Magento 2 admin pages,
+ * system configuration sections, and quick actions.
+ *
+ * Path conventions:
+ *   - Paths starting with /admin/admin/ are Magento_Backend routes
+ *     (cache, config, users, import/export, etc.)
+ *   - Paths starting with /admin/{module}/ are module-specific routes
+ *     (sales, catalog, customer, cms, etc.)
+ *   - The first /admin is stripped by navigateToPath() and replaced
+ *     with the actual admin frontname from the current URL.
+ *
+ * To add new pages: add an entry with { name, path, icon, keywords }
+ */
 
 const MINSAR_INDEX = {
   // Admin Menu Pages

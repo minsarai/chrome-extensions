@@ -28,7 +28,7 @@ Coming soon.
 1. Clone this repo: `git clone https://github.com/minsarai/chrome-extensions.git`
 2. Open Chrome → `chrome://extensions/`
 3. Enable "Developer mode" (top right)
-4. Click "Load unpacked" → select the `minsar-extension` folder
+4. Click "Load unpacked" → select the `minsar-magento-toolkit` folder
 5. Navigate to your Magento admin → click the Minsar icon
 
 ## How It Works
