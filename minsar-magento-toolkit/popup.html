@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minsar</title>
+  <link rel="stylesheet" href="css/popup.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <div class="header">
+      <div class="header-left">
+        <span class="logo">⚡</span>
+        <span class="brand">Minsar</span>
+      </div>
+      <div class="header-right">
+        <span id="store-info-badge" class="badge hidden" title="Store info"></span>
+        <button id="btn-settings" class="icon-btn" title="Settings">⚙️</button>
+      </div>
+    </div>
+
+    <!-- Not Magento Warning -->
+    <div id="not-magento" class="notice hidden">
+      <p>⚠️ This page doesn't appear to be a Magento admin panel.</p>
+      <p class="notice-sub">Navigate to your Magento admin to use Minsar.</p>
+    </div>
+
+    <!-- Main Content (shown on Magento pages) -->
+    <div id="main-content" class="hidden">
+
+      <!-- Omni Search -->
+      <div class="search-section">
+        <input type="text" id="omni-search" placeholder="Search pages, configs, actions... (Ctrl+Shift+K)" autocomplete="off">
+        <div id="search-results" class="search-results hidden"></div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="section">
+        <div class="section-title">Quick Actions</div>
+        <div class="actions-grid">
+          <button id="btn-flush-all" class="action-btn primary" title="Flush All Caches">
+            <span class="action-icon">🗑️</span>
+            <span class="action-label">Flush All Cache</span>
+          </button>
+          <button id="btn-flush-config" class="action-btn" title="Flush Config Cache">
+            <span class="action-icon">⚙️</span>
+            <span class="action-label">Config</span>
+          </button>
+          <button id="btn-flush-layout" class="action-btn" title="Flush Layout Cache">
+            <span class="action-icon">📐</span>
+            <span class="action-label">Layout</span>
+          </button>
+          <button id="btn-flush-fpc" class="action-btn" title="Flush Full Page Cache">
+            <span class="action-icon">📄</span>
+            <span class="action-label">Full Page</span>
+          </button>
+          <button id="btn-flush-block" class="action-btn" title="Flush Block HTML Cache">
+            <span class="action-icon">🧱</span>
+            <span class="action-label">Block HTML</span>
+          </button>
+          <button id="btn-flush-translate" class="action-btn" title="Flush Translation Cache">
+            <span class="action-icon">🌐</span>
+            <span class="action-label">Translation</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Order Search -->
+      <div class="section">
+        <div class="section-title">Order Search</div>
+        <div class="order-search-row">
+          <input type="text" id="order-search" placeholder="Order #, email, or customer name...">
+          <button id="btn-order-search" class="action-btn small">🔍</button>
+        </div>
+      </div>
+
+      <!-- Toggles -->
+      <div class="section">
+        <div class="section-title">View</div>
+        <div class="toggles">
+          <label class="toggle-row">
+            <span>🌙 Dark Mode</span>
+            <input type="checkbox" id="toggle-dark" class="toggle">
+          </label>
+          <label class="toggle-row">
+            <span>📐 Compact Mode</span>
+            <input type="checkbox" id="toggle-compact" class="toggle">
+          </label>
+        </div>
+      </div>
+
+      <!-- Bookmarks -->
+      <div class="section">
+        <div class="section-title">
+          Bookmarks
+          <button id="btn-add-bookmark" class="icon-btn small" title="Bookmark this page">+ Add</button>
+        </div>
+        <div id="bookmarks-list" class="bookmarks-list">
+          <p class="empty-state">No bookmarks yet. Click "+ Add" to save this page.</p>
+        </div>
+      </div>
+
+      <!-- Recent History -->
+      <div class="section">
+        <div class="section-title">Recent Pages</div>
+        <div id="history-list" class="history-list">
+          <p class="empty-state">History will appear as you navigate.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Settings Panel -->
+    <div id="settings-panel" class="hidden">
+      <div class="section">
+        <div class="section-title">
+          <button id="btn-back" class="icon-btn small">← Back</button>
+          Settings
+        </div>
+
+        <div class="setting-group">
+          <div class="setting-label">Environment Labels</div>
+          <p class="setting-desc">Map your URLs to environments. The bar color shows on every admin page.</p>
+          <div id="env-settings">
+            <div class="env-row">
+              <input type="text" class="env-url" placeholder="e.g. dev.mystore.com" data-env="dev">
+              <span class="env-badge dev">DEV</span>
+            </div>
+            <div class="env-row">
+              <input type="text" class="env-url" placeholder="e.g. staging.mystore.com" data-env="staging">
+              <span class="env-badge staging">STAGING</span>
+            </div>
+            <div class="env-row">
+              <input type="text" class="env-url" placeholder="e.g. mystore.com" data-env="production">
+              <span class="env-badge production">PROD</span>
+            </div>
+          </div>
+          <button id="btn-save-env" class="action-btn primary small">Save Environment Settings</button>
+        </div>
+
+        <div class="setting-group">
+          <div class="setting-label">Keyboard Shortcuts</div>
+          <div class="shortcuts-list">
+            <div class="shortcut-row"><kbd>Ctrl+Shift+K</kbd> Omni-Search</div>
+            <div class="shortcut-row"><kbd>Ctrl+Shift+C</kbd> Flush All Caches</div>
+            <div class="shortcut-row"><kbd>Ctrl+Shift+D</kbd> Toggle Dark Mode</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>Minsar v1.0.0 — Built by <a href="https://linkedin.com/in/saif-ali-rehman-250287" target="_blank">Saif Ali</a></p>
+        <p><a href="https://github.com/minsarai/chrome-extensions" target="_blank">⭐ Star on GitHub</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="js/config-index.js"></script>
+  <script src="js/popup.js"></script>
+</body>
+</html>
